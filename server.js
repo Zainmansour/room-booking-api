@@ -12,7 +12,7 @@ mongoose.connect(process.env.MONGO_URL, () => { console.log('connected') })
 app.use(express.json())
 app.use('/room', auth.checkUserToken)
 
-// create new user
+// create a new user
 app.route('/reg').post(auth.protect, auth.createUser);
 // login a user
 app.route('/login').post(auth.login);
